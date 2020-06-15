@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav id="navbar">
+      <h1><i class="fas fa-globe"></i> &nbsp; WELCOME</h1>
+      <ul>
+        <li>
+          <a href="index.html"
+            ><i class="fas fa-calculator"></i>&nbsp; Analytics</a
+          >
+        </li>
+        <li class="current">
+          <a href="index.html">
+            <i class="fas fa-book-reader"></i>&nbsp; Students</a
+          >
+        </li>
+        <li>
+          <a href="courses.html"> <i class="fas fa-book"></i>&nbsp; Courses</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section id="content">
+      <div class="container">
+        <div class="title">
+          <h1 class="heading">
+            <i class="fas fa-book-reader"></i>
+
+            &nbsp;Students
+          </h1>
+        </div>
+        <div id="actions">
+          <button id="myBtn">
+            Add a Student
+          </button>
+          <!-- The Modal -->
+          <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p>Add A New Student</p>
+
+              <form action="#" class="form">
+                <div>
+                  <label for="id">ID</label>
+                  <input
+                    id="id"
+                    type="number"
+                    placeholder="Student ID ...."
+                    autocomplete="off"
+                  />
+                  <div>
+                    <label for="name">Student Name</label>
+                    <input
+                      id="sname"
+                      type="text"
+                      placeholder="Student Name ...."
+                      autocomplete="off"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label for="course">Course:</label>
+                  <input
+                    id="course"
+                    type="text"
+                    placeholder="Course ...."
+                    autocomplete="off"
+                  />
+                </div>
+
+                <div>
+                  <button
+                    type="submit"
+                    value="Submit"
+                    id="student-submit"
+                    class="btn"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- modal ends -->
+        </div>
+        <table>
+          <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Course</th>
+            <th>More...</th>
+          </thead>
+          <tbody id="student-list">
+            <tr>
+              <td>1</td>
+              <td>Random</td>
+              <td>Python</td>
+              <td>
+                <a href="details.html" class="btn">Details</a>
+                <a href="#" class="btn-remove">Remove</a>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Ajad</td>
+              <td>Python</td>
+              <td>
+                <a href="details.html" class="btn">Details</a>
+                <a href="#" class="btn-remove">Remove</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <script
+      src="https://kit.fontawesome.com/80230328e0.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <style></style>
+  </head>
+  <body>
+    <nav id="navbar">
+      <h1><i class="fas fa-globe"></i> &nbsp; WELCOME</h1>
+      <ul>
+        <li>
+          <a href="analytics.html">
+            <i class="fas fa-calculator"></i>&nbsp; Analytics</a
+          >
+        </li>
+        <li>
+          <a href="index.html">
+            <i class="fas fa-book-reader"></i>&nbsp;Students</a
+          >
+        </li>
+        <li class="current">
+          <a href="courses.html"> <i class="fas fa-book"></i>&nbsp; Courses</a>
+        </li>
+      </ul>
+    </nav>
+    <section id="content">
+      <div class="container">
+        <div class="title">
+          <h1 class="heading"><i class="fas fa-book"></i> &nbsp;Courses</h1>
+        </div>
+        <div id="actions">
+          <button id="myBtn">
+            Add a Course
+          </button>
+          <!-- The Modal -->
+          <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p>Add A New Course</p>
+
+              <form action="#" class="form">
+                <div>
+                  <label for="name">Course Name</label>
+                  <input
+                    id="name"
+                    type="text"
+                    placeholder="Course Name ...."
+                    autocomplete="off"
+                  />
+                </div>
+                <div>
+                  <label for="price">Price</label>
+                  <input
+                    id="price"
+                    type="number"
+                    placeholder="Course Price ...."
+                    autocomplete="off"
+                  />
+                </div>
+                <div>
+                  <label for="duration">Duration:</label>
+                  <input
+                    id="duration"
+                    type="text"
+                    placeholder="Course Duration ...."
+                    autocomplete="off"
+                  />
+                </div>
+                <div>
+                  <label for="seats">Seats</label>
+                  <input
+                    id="seats"
+                    type="number"
+                    placeholder="Seats Available ...."
+                    autocomplete="off"
+                  />
+                </div>
+                <div>
+                  <button
+                    type="submit"
+                    value="Submit"
+                    id="course-submit"
+                    class="btn"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- modal ends -->
+        </div>
+        <table>
+          <thead>
+            <th>Course-Name</th>
+            <th>Duration</th>
+            <th>Price</th>
+            <th>Seats Available</th>
+            <th>Action</th>
+          </thead>
+          <tbody id="course-details">
+            <tr>
+              <td>Python</td>
+              <td>3 months</td>
+              <td>15000</td>
+              <td>20</td>
+              <td><a href="#" class="btn-remove">Remove</a></td>
+            </tr>
+            <tr>
+              <td>Javascript</td>
+              <td>2 months</td>
+              <td>18000</td>
+              <td>20</td>
+              <td><a href="#" class="btn-remove">Remove</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <script
+      src="https://kit.fontawesome.com/80230328e0.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
