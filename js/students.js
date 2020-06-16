@@ -51,12 +51,35 @@ class Store {
 
   static removeStudent(id) {
     const students = Store.getStudents();
+    const payments = StorePayment.getPayments();
+    console.log(payments);
+
     students.forEach((student, index) => {
       if (student.id === id) {
         students.splice(index, 1);
       }
       localStorage.setItem("students", JSON.stringify(students));
     });
+    let results = [];
+    results = payments.filter((payment) => {
+      if (payment.id != id) {
+        return payment;
+      }
+    });
+    localStorage.setItem("payments", JSON.stringify(results));
+  }
+}
+class StorePayment {
+  static getPayments() {
+    let payments;
+    if (localStorage.getItem("payments") === null) {
+      payments = [];
+    } else {
+      payments = JSON.parse(localStorage.getItem("payments"));
+      //let studentPayment = [];
+      console.log(payments);
+    }
+    return payments;
   }
 }
 

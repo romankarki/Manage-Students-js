@@ -71,8 +71,8 @@ class PaymentUI {
   }
 }
 
-class Store {
-  static getPayments(id) {
+class StorePayment {
+  static getPayments() {
     let payments;
     if (localStorage.getItem("payments") === null) {
       payments = [];
@@ -96,7 +96,7 @@ class Store {
   }
 
   static displayPayments(id) {
-    const payments = Store.getPayments(id);
+    const payments = StorePayment.getPayments();
 
     payments.forEach((payment) => {
       if (payment.id == id) {
@@ -107,7 +107,7 @@ class Store {
   }
 
   static addPayment(payment) {
-    const payments = Store.getPayments(payment.id);
+    const payments = StorePayment.getPayments();
     payments.push(payment);
     localStorage.setItem("payments", JSON.stringify(payments));
   }
@@ -115,7 +115,7 @@ class Store {
 
 document.addEventListener(
   "DOMContentLoaded",
-  Store.displayPayments(JSON.parse(localStorage.getItem("details-id")))
+  StorePayment.displayPayments(JSON.parse(localStorage.getItem("details-id")))
 );
 
 const makePay = document.querySelector("#payment-submit");
@@ -128,7 +128,7 @@ makePay.onclick = (e) => {
   const ui = new PaymentUI();
   console.log(payment);
   ui.addToPaymentList(payment);
-  Store.addPayment(payment);
+  StorePayment.addPayment(payment);
   modal.style.display = "none";
   e.preventDefault();
 };
