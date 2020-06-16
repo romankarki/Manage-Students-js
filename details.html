@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Welcome| Details-Student</title>
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap"
@@ -15,9 +15,12 @@
       <h1><i class="fas fa-globe"></i> &nbsp; WELCOME</h1>
       <ul>
         <li>
-          <a href="amalytics.html"
-            ><i class="fas fa-calculator"></i>&nbsp; Analytics</a
-          >
+          <!-- Rounded switch -->
+          <label class="switch">
+            <input type="checkbox" id="theme" />
+            <span class="slider round"></span>
+          </label>
+          &nbsp; Theme
         </li>
         <li class="current">
           <a href="index.html">
@@ -29,6 +32,50 @@
         </li>
       </ul>
     </nav>
+
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Add A New Payment</p>
+        <br /><br />
+        <p style="font-size: 0.7rem; color: red;">
+          *Please fill carefully you can't remove the payment information later!
+        </p>
+        <form action="#" class="form">
+          <div>
+            <label for="Payment">Payment Title</label>
+            <input
+              id="payment"
+              type="text"
+              placeholder="Payment Title ...."
+              autocomplete="off"
+            />
+          </div>
+          <div>
+            <label for="Amount">Amount</label>
+            <input
+              id="amount"
+              type="number"
+              placeholder="Amount ...."
+              autocomplete="off"
+            />
+          </div>
+
+          <div>
+            <button
+              type="submit"
+              value="Submit"
+              id="payment-submit"
+              class="btn"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- modal ends -->
     <section id="content">
       <div class="container">
         <div class="title">
@@ -45,26 +92,24 @@
               alt=""
             />
           </div>
-          <div class="details">
-            <ul>
-              <li>Name: Ajad Karki</li>
-              <li>Course: Python</li>
-              <li>Date of Birth: 1998/01/11</li>
-              <li>
-                <br /><br /><br />
-                <a href="#" class="btn">Add a Payment</a>
-                <a href="#" class="btn"> Financial History</a>
-                <a href="#" class="btn">Add a Bill</a>
-              </li>
-            </ul>
-          </div>
+          <div id="detail-of-student"></div>
         </div>
+        <table>
+          <thead>
+            <th>Student Id</th>
+            <th>Amount</th>
+            <th>Payment-title</th>
+            <th>Date</th>
+          </thead>
+          <tbody id="payment-list"></tbody>
+        </table>
       </div>
     </section>
     <script
       src="https://kit.fontawesome.com/80230328e0.js"
       crossorigin="anonymous"
     ></script>
-    <script src="app.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/details.js"></script>
   </body>
 </html>
