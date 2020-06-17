@@ -367,6 +367,7 @@ input:checked + .slider:before {
   }
   #content .container table tbody tr td {
     padding: 1rem 0rem;
+    padding-right: 1rem;
   }
   #content .container table tbody tr .show-detail,
   #content .container table tbody tr .btn-remove {
