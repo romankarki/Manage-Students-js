@@ -74,13 +74,17 @@ courseBtn.onclick = (event) => {
   const price = document.querySelector("#price").value;
   const duration = document.querySelector("#duration").value;
   const seats = document.querySelector("#seats").value;
+  if ((name === "") | (price === "") | (duration === "") | (seats === "")) {
+    alert("Please Fill the form properly");
+  } else {
+    const course = new Course(name, price, duration, seats);
 
-  const course = new Course(name, price, duration, seats);
+    const ui = new CourseUI();
+    ui.addCourseToList(course);
+    Store.addCourse(course);
+    modal.style.display = "none";
+  }
 
-  const ui = new CourseUI();
-  ui.addCourseToList(course);
-  Store.addCourse(course);
-  modal.style.display = "none";
   event.preventDefault();
   //
 };

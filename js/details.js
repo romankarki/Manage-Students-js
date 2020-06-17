@@ -123,13 +123,17 @@ const makePay = document.querySelector("#payment-submit");
 makePay.onclick = (e) => {
   const title = document.querySelector("#payment").value;
   const amount = document.querySelector("#amount").value;
+  if ((title === "") | (amount === "")) {
+    alert("Fill the form properly!!");
+  } else {
+    const payment = new Payment(title, amount);
+    const ui = new PaymentUI();
+    console.log(payment);
+    ui.addToPaymentList(payment);
+    StorePayment.addPayment(payment);
+    modal.style.display = "none";
+  }
 
-  const payment = new Payment(title, amount);
-  const ui = new PaymentUI();
-  console.log(payment);
-  ui.addToPaymentList(payment);
-  StorePayment.addPayment(payment);
-  modal.style.display = "none";
   e.preventDefault();
 };
 

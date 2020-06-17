@@ -93,11 +93,17 @@ studentBtn.onclick = (e) => {
   const id = document.querySelector("#id").value;
   const name = document.querySelector("#sname").value;
   const course = document.querySelector("#course").value;
-  const student = new Student(id, name, course);
-  const ui = new StudentUI();
-  ui.addStudentToList(student);
-  Store.addStudent(student);
-  modal.style.display = "none";
+  if ((id === "") | (name === "") | (course === "")) {
+    alert("Fill Form  before submitting!");
+  } else {
+    const student = new Student(id, name, course);
+    console.log(id, name, course);
+    const ui = new StudentUI();
+    ui.addStudentToList(student);
+    Store.addStudent(student);
+    modal.style.display = "none";
+  }
+
   e.preventDefault();
 };
 
